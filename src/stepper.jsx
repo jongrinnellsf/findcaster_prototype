@@ -13,7 +13,6 @@ import './styles/cal.css';
 import Skeleton from '@mui/material/Skeleton';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import QuizPage from './QuizPage';
 import { Link } from 'react-router-dom';
 
 import CalendarHeatmap from 'react-calendar-heatmap';

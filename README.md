@@ -1,13 +1,9 @@
-## Running React on Repl.it
+## Go here to view your NFTs
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
+[View Base Camp NFTs]([https://reactjs.org/](https://profilebasecamp.jgrinnell0.repl.co)) 
 
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
+[Vite](https://vitejs.dev/) is the ultimate guide to learning smart contract development. Base Camp's curriculum has been expertly crafted to equip you with the skills and knowledge needed to build and deploy smart contracts on Base, or any EVM-compatible chain, including Ethereum, Optimism, and many more. Plus, you'll be eligible to earn NFTs as you complete each module, showcasing your mastery of the material.
 
-Using the two in conjunction is one of the fastest ways to build a web app.
 
-### Getting Started
-- Hit run
-- Edit [App.jsx](#src/App.jsx) and watch it live update!
+Along the way you'll pick up NFTs, and this app helps you view them on Base testnet 
 
-By default, Replit runs the `dev` script, but you can configure it by changing the `run` field in the `.replit` file.
