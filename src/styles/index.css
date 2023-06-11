@@ -1,0 +1,26 @@
+body,
+html {
+  margin: 10;
+  background-color: #000;
+font-family: "Roboto","Helvetica","Arial",sans-serif; 
+  color: #fff;
+}
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Roboto","Helvetica","Arial",sans-serif; 
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+Button, button, .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
+    background: -webkit-linear-gradient(left, 30%, #1FD1F9 60%);
+    color:  #B621FE
+}
+
+
