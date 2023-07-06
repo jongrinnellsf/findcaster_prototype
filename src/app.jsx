@@ -113,7 +113,7 @@ export default function App() {
                 type="text" 
                 value={inputAddress} 
                 onChange={e => setInputAddress(e.target.value)} 
-                placeholder="search for any user, user field, or emoji" 
+                placeholder="search for any user field, emoji, or 0x ethereum address" 
               />
               <button className="app-connect-button" type="submit">Submit</button>
             </form>
