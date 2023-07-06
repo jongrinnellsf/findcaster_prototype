@@ -22,12 +22,12 @@ function UserCard({ user }) {
       <p>{user.body.bio}</p>
 			<div className="logo-wrap">
 					<a href={`https://warpcast.com/${user.body.username}`} target="_blank" rel="noopener noreferrer">
-          <img className="i" src={`src/fc.png`} alt="Farcaster logo" />
+          <img className="i" src= 'src/fc.png' alt="Farcaster logo" />
         </a>
 
       {shortAddress && 
 					<a href={`https://etherscan.io/address/${user.connectedAddress}`} target="_blank" rel="noopener noreferrer">
-          <img className="i" src={`src/es.png`} alt="Etherscan logo" />
+          <img className="i" src= 'src/es.png' alt="Etherscan logo" />
         </a>
       }
 		<span className="cb-blue fid">fid: {user.body.id}</span>
