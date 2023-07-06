@@ -7,8 +7,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { Fragment } from 'react';
 import './styles/App.css';
-import './fc.png';
-import './es.png';
+// import './fc.png';
+// import './es.png';
 import axios from 'axios';
 
 function UserCard({ user }) {
@@ -22,13 +22,13 @@ function UserCard({ user }) {
       <p>{user.body.bio}</p>
 			<div className="logo-wrap">
 					<a href={`https://warpcast.com/${user.body.username}`} target="_blank" rel="noopener noreferrer">
-<img className="i" src='https://findcaster.vercel.app/fc.png' alt="Farcaster logo" />
+<img className="i" src='https://www.farcaster.xyz/icon.png' alt="Farcaster logo" />
 
         </a>
 
       {shortAddress && 
 					<a href={`https://etherscan.io/address/${user.connectedAddress}`} target="_blank" rel="noopener noreferrer">
-<img className="i" src='https://findcaster.vercel.app/es.png' alt="Etherscan logo" />
+<img className="i" src='https://cdn-images-1.medium.com/v2/resize:fit:176/1*MxpMgwpR-_fXBou_ftL4qg@2x.png' alt="Etherscan logo" />
 
         </a>
       }
@@ -123,7 +123,7 @@ export default function App() {
 						  <button className="app-connect-button" onClick={() => fetchUsersByInterest("music")}>🎶 music</button>
 						  <button className="app-connect-button" onClick={() => fetchUsersByInterest("purple")}>🟪 purple</button>
 							<button className="app-connect-button" onClick={() => fetchUsersByInterest("🔵")}>🔵</button>
-							<button className="app-connect-button" onClick={() => fetchUsersByInterest("dad")}>🧢 dadcaster</button></div>
+							<button className="app-connect-button" onClick={() => fetchUsersByInterest("dad")}>🧢 dads</button></div>
           </div>
         </div>
       )}
