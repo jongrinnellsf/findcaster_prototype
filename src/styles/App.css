@@ -11,14 +11,10 @@ a {
 
 }
 
-.fid {
-		padding-left: 1%;
-	font-size: 11px;
-}
 
-.cb-blue {
+
+.fcpurple {
 	  color: #8A63D2;
-
 }
 
 
@@ -26,7 +22,13 @@ a {
   padding-left: 1%;
   font-weight: bold;
   cursor: pointer;
+	font-size: 20px;
 }
+
+.github {
+	  padding: 1%;
+}
+
 
 .nav {
     display: flex;
@@ -34,6 +36,8 @@ a {
     justify-content: space-between;
     width: 100%;
     margin: 1% 0%;
+	align-items: center;
+	
 }
 
 
@@ -57,15 +61,7 @@ a {
   font-size: 50px;
   font-weight: bold;
 	text-align: center;
-
-
 }
-
-.center {
-  text-align: center;
-}
-
-
 
 img {
 	border-radius: 5px;
@@ -126,9 +122,16 @@ img {
 	background-color: rgb(24,21,30);
 }
 
+.fid {
+	border: 1px solid #8A63D2;
+	border-radius: 4%;
+	padding: 2px 5px;
+	margin-left: 1.5%;
+}
 
 .pad {
 	padding: 1%;
+
 }
 
 	.users>img {
@@ -140,7 +143,7 @@ img {
 	padding: 3%;
 }
     .header {
-        font-size: 40px;
+        font-size: 25px;
         font-weight: bold;
     }
 
@@ -237,3 +240,9 @@ form input[type="text"] {
 button:hover {
     background-color: #6134b4;
 }
+
+
+
+
+
+
