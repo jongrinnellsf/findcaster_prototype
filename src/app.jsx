@@ -101,11 +101,30 @@ export default function App() {
       </div>
 
       {users.length ? ( // If users array is not empty
-        <div className="app">
-            <h1 className="fcpurple thin">Search results for '{searchQuery}' </h1>
-          {selectedInterest === "dad" && <div className="noty"><div className="noty-text pad">These casters tend to own <a target="_blank" rel="noopener noreferrer" className="fcpurple" href="https://zora.co/collect/eth:0x6a95180c60a721e6b041a5649a77a7b46902c07f"> dadcaster NFTs 🧢</a></div></div>}
-          {selectedInterest === "purple" && <div className="noty"><div className="noty-text pad">These casters tend to own <a target="_blank" rel="noopener noreferrer" className="fcpurple" href="https://purple.construction/"> purple NFTs 🟪</a></div></div>}
-          {selectedInterest === "🔵" && <div className="noty"><div className="noty-text pad">These casters tend to own <a target="_blank" rel="noopener noreferrer" className="fcpurple" href="https://zora.co/collect/eth:0xd4307e0acd12cf46fd6cf93bc264f5d5d1598792"> base, introduced NFTs 🔵</a></div></div>}
+        
+			<div className="app">
+            <form className="shell" onSubmit={handleFormSubmit}>
+              <input 
+                className="shell-text"
+								type="text" 
+                value={inputAddress} 
+                onChange={e => setInputAddress(e.target.value)} 
+                placeholder="search for any user field, emoji, or 0x ethereum address" 
+              />
+              <button className="app-connect-button" type="submit">Submit</button>
+            </form>
+
+            <div><h1 className="fcpurple thin">Search results for <span className="white">'{searchQuery}' </span></h1>
+          {selectedInterest === "dad" && <div className="pad thin">These casters tend to own <a target="_blank" rel="noopener noreferrer" className="fcpurple" href="https://zora.co/collect/eth:0x6a95180c60a721e6b041a5649a77a7b46902c07f"> dadcaster NFTs 🧢</a></div>}
+          {selectedInterest === "purple" && <div className="pad thin">These casters tend to own <a target="_blank" rel="noopener noreferrer" className="fcpurple" href="https://purple.construction/"> purple NFTs 🟪</a></div>}
+	{selectedInterest === "🔵" && <div className="pad thin">These casters tend to own <a target="_blank" rel="noopener noreferrer" className="fcpurple" href="https://zora.co/collect/eth:0xd4307e0acd12cf46fd6cf93bc264f5d5d1598792"> base, introduced NFTs 🔵</a></div>}						
+						
+						
+						</div>            
+          
+          {/* {selectedInterest === "dad" && <div className="noty"><div className="noty-text pad">These casters tend to own <a target="_blank" rel="noopener noreferrer" className="fcpurple" href="https://zora.co/collect/eth:0x6a95180c60a721e6b041a5649a77a7b46902c07f"> dadcaster NFTs 🧢</a></div></div>} */}
+          {/* {selectedInterest === "purple" && <div className="noty"><div className="noty-text pad">These casters tend to own <a target="_blank" rel="noopener noreferrer" className="fcpurple" href="https://purple.construction/"> purple NFTs 🟪</a></div></div>} */}
+          {/* {selectedInterest === "🔵" && <div className="noty"><div className="noty-text pad">These casters tend to own <a target="_blank" rel="noopener noreferrer" className="fcpurple" href="https://zora.co/collect/eth:0xd4307e0acd12cf46fd6cf93bc264f5d5d1598792"> base, introduced NFTs 🔵</a></div></div>} */}
 
           <div className="parent">
             {users.map(user => (

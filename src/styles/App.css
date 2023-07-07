@@ -10,6 +10,10 @@ a {
 	text-decoration: none;
 }
 
+.white {
+	color: white;
+}
+
 
 .fcpurple {
 	  color: #8A63D2;
@@ -35,7 +39,6 @@ a {
     justify-content: space-between;
     width: 100%;
     margin: 1% 0%;
-	align-items: center;
 	
 }
 
@@ -56,6 +59,7 @@ button {
   border-radius: 5px;
 	max-width: 180px;
 	min-width: 140px;
+	max-height: 50px;
 }
 
 .header {
@@ -76,6 +80,21 @@ img {
 	min-width: 100%;
 	justify-content: center;
 }
+
+.shell {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	min-width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.shell-text {
+	min-width: 50%;
+}
+
+
 
 .logo-wrap {
 	display: flex;
@@ -128,8 +147,8 @@ img {
   padding: 1% 0%;
 	border: none;
   border-radius: 20px;
-  width: 100%;
-	background-color: rgb(24,21,30);
+  width: 90%;
+	align-self: center;
 }
 
 .fid {
@@ -140,8 +159,8 @@ img {
 }
 
 .pad {
-	padding: 1%;
-
+	padding: 3% 0%;
+	width: 100%;
 }
 
 	.users>img {
@@ -149,21 +168,31 @@ img {
 	}
 
 @media (max-width: 1130px) {
-.pad {
-	padding: 3%;
-}
+
     .header {
         font-size: 25px;
         /* font-weight: bold; */
     }
+
+	.github {
+	  padding: 1%;
+		margin: 3% 1%;
+}
+
+	.pad {
+	padding: 3% 0%;
+	width: 100%;
+	text-align: center;
+}
 
 	.users>img {
 		margin-top: 5%;
 	}
 
 	.noty {
-	margin: 5% 0%;;
-  padding: 1% 0%;;
+	/* margin: 2% 0%; */
+  padding: 0% 0%;
+		align-self: center;
 }
 
 	.smaller {
@@ -197,7 +226,7 @@ img {
 
 	.app-connect-button {
   margin: 1%;
-	max-width: 70%;
+	max-width: 50%;
 	min-width: 140px;
 }
 
@@ -212,6 +241,8 @@ form input[type="text"] {
 	width: 90%;
 	min-height: 30px;
 }
+
+
 
 	button {
 		width: 100%;
@@ -237,7 +268,7 @@ form {
 }
 
 form input[type="text"] {
-    flex-basis: 50%;
+    /* flex-basis: 50%; */
     padding: 10px;
 	min-width: 50%;
 	margin: 3%;
