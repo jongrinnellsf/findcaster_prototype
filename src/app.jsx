@@ -17,7 +17,7 @@ function UserCard({ user }) {
   return (
     <div className="users">
 			<img src={user.body.avatarUrl || 'src/fc.png'} alt={user.body.username} />
-      <h3>{user.body.displayName}</h3>
+      <h3 className="weight">{user.body.displayName}</h3>
 
       <p>{user.body.bio}</p>
 			<div className="logo-wrap">
@@ -32,7 +32,6 @@ function UserCard({ user }) {
 
         </a>
       }
-		{/* <span className="fcpurple fid">fid: {user.body.id}</span> */}
 				<div className="fid ">fid: {user.body.id}</div>
 
 				</div>
@@ -48,10 +47,14 @@ export default function App() {
     setValue(newValue);
   };
 
+	const [searchQuery, setSearchQuery] = useState('');
+
+
 
   const fetchUsersByInterest = async (interest) => {
     setAddress(null);
 		setSelectedInterest(interest);  // Save the selected interest
+  setSearchQuery(interest); // Set the search query
 
     try {
       const response = await axios.get(`https://searchcaster.xyz/api/profiles?q=${interest}`);
@@ -83,6 +86,8 @@ export default function App() {
   const handleFormSubmit = (e) => {
     e.preventDefault();  // Prevent the form from causing a page refresh
     fetchUsersByBio(inputAddress);
+		  setSearchQuery(inputAddress); // Set the search query
+
   };
 
 
@@ -97,7 +102,7 @@ export default function App() {
 
       {users.length ? ( // If users array is not empty
         <div className="app">
-            <h1 className="fcpurple">Search results</h1>
+            <h1 className="fcpurple thin">Search results for '{searchQuery}' </h1>
           {selectedInterest === "dad" && <div className="noty"><div className="noty-text pad">These casters tend to own <a target="_blank" rel="noopener noreferrer" className="fcpurple" href="https://zora.co/collect/eth:0x6a95180c60a721e6b041a5649a77a7b46902c07f"> dadcaster NFTs 🧢</a></div></div>}
           {selectedInterest === "purple" && <div className="noty"><div className="noty-text pad">These casters tend to own <a target="_blank" rel="noopener noreferrer" className="fcpurple" href="https://purple.construction/"> purple NFTs 🟪</a></div></div>}
           {selectedInterest === "🔵" && <div className="noty"><div className="noty-text pad">These casters tend to own <a target="_blank" rel="noopener noreferrer" className="fcpurple" href="https://zora.co/collect/eth:0xd4307e0acd12cf46fd6cf93bc264f5d5d1598792"> base, introduced NFTs 🔵</a></div></div>}
@@ -111,7 +116,7 @@ export default function App() {
       ) : (
         <div>
           <div className="header">
-            <h2>Findcaster</h2>
+            <h2 className="weight">Findcaster</h2>
             <form onSubmit={handleFormSubmit}>
               <input 
                 type="text" 
@@ -123,7 +128,7 @@ export default function App() {
             </form>
               <p className="smaller">Browse by term</p>
 						<div className="buttongroup">
-              <button className="app-connect-button" onClick={() => fetchUsersByInterest("NFT")}>🖼️ nfts</button>
+              <button className="app-connect-button" onClick={() => fetchUsersByInterest("nft")}>🖼️ nfts</button>
 						  <button className="app-connect-button" onClick={() => fetchUsersByInterest("music")}>🎶 music</button>
 						  <button className="app-connect-button" onClick={() => fetchUsersByInterest("purple")}>🟪 purple</button>
 							<button className="app-connect-button" onClick={() => fetchUsersByInterest("🔵")}>🔵</button>

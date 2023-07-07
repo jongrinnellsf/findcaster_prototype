@@ -8,9 +8,7 @@
 
 a {
 	text-decoration: none;
-
 }
-
 
 
 .fcpurple {
@@ -23,6 +21,7 @@ a {
   font-weight: bold;
   cursor: pointer;
 	font-size: 20px;
+	font-weight: 300;
 }
 
 .github {
@@ -40,11 +39,13 @@ a {
 	
 }
 
+button {
+	font-weight: lighter;
+}
 
 .app-connect-button {
   margin-right: 1%;
   font-size: 15px;
-  font-weight: bold;
   background: #8A63D2;
   border: none;
   color: white;
@@ -59,7 +60,6 @@ a {
 
 .header {
   font-size: 50px;
-  font-weight: bold;
 	text-align: center;
 }
 
@@ -107,11 +107,21 @@ img {
   flex-direction: column;
 	text-wrap: wrap;
 	background-color: rgb(24,21,30);
+	
 }
 
 	.smaller {
 		font-size: 30px;
+		font-weight: 250;
 	}
+
+.weight {
+	font-weight: 900;
+}
+
+.thin {
+	font-weight: 300;
+}
 
 .noty {
 	margin: 1% 0%;;
@@ -144,7 +154,7 @@ img {
 }
     .header {
         font-size: 25px;
-        font-weight: bold;
+        /* font-weight: bold; */
     }
 
 	.users>img {
