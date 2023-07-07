@@ -128,11 +128,15 @@ export default function App() {
             </form>
               <p className="smaller">Browse by term</p>
 						<div className="buttongroup">
-              <button className="app-connect-button" onClick={() => fetchUsersByInterest("nft")}>🖼️ nfts</button>
+              <button className="app-connect-button" onClick={() => fetchUsersByInterest("NFT")}>🖼️ nfts</button>
 						  <button className="app-connect-button" onClick={() => fetchUsersByInterest("music")}>🎶 music</button>
+							<button className="app-connect-button" onClick={() => fetchUsersByInterest("dev")}>🛠️ devs</button>
 						  <button className="app-connect-button" onClick={() => fetchUsersByInterest("purple")}>🟪 purple</button>
 							<button className="app-connect-button" onClick={() => fetchUsersByInterest("🔵")}>🔵</button>
-							<button className="app-connect-button" onClick={() => fetchUsersByInterest("dad")}>🧢 dads</button></div>
+							<button className="app-connect-button" onClick={() => fetchUsersByInterest("dad")}>🧢 dads</button>
+						
+						</div>
+						
           </div>
         </div>
       )}
