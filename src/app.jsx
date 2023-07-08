@@ -13,7 +13,7 @@ import {ethers} from 'ethers';
 
 const provider = new ethers.providers.AlchemyProvider("homestead", import.meta.env.VITE_MY_SECRET);
 
-
+ 
 function UserCard({ user }) {
   const shortAddress = user.connectedAddress 
 	
