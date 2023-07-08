@@ -31,7 +31,7 @@ function UserCard({ user }) {
       {shortAddress && 
 					<a href={`https://etherscan.io/address/${user.connectedAddress}`} target="_blank" rel="noopener noreferrer">
 <img className="i" src='https://cdn-images-1.medium.com/v2/resize:fit:176/1*MxpMgwpR-_fXBou_ftL4qg@2x.png' alt="Etherscan logo" />
-
+ 
         </a>
       }
 				<div className="fid ">fid: {user.body.id}</div>
