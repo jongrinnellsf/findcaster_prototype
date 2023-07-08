@@ -175,7 +175,7 @@ const [errorMessage, setErrorMessage] = useState(null);
 								type="text" 
                 value={inputAddress} 
                 onChange={e => setInputAddress(e.target.value)} 
-                placeholder="search for any user field, emoji, or 0x ethereum address" 
+                placeholder="search for any user field, emoji, or ENS" 
               />
               <button className="app-connect-button" type="submit">Submit</button>
             </form>
@@ -204,7 +204,7 @@ const [errorMessage, setErrorMessage] = useState(null);
                 type="text" 
                 value={inputAddress} 
                 onChange={e => setInputAddress(e.target.value)} 
-                placeholder="search for any user field, emoji, or 0x ethereum address" 
+                placeholder="search for any user field, emoji, or ENS" 
               />
               <button className="app-connect-button" type="submit">Submit</button>
             </form>
