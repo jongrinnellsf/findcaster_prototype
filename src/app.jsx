@@ -10,9 +10,9 @@ import './styles/App.css';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import axios from 'axios';
 import {ethers} from 'ethers';
-const apiKey = process.env.apiKey;
+// const apiKey = process.env.apiKey;
 
-const provider = new ethers.providers.AlchemyProvider("homestead", apiKey);
+// const provider = new ethers.providers.AlchemyProvider("homestead", apiKey);
 
 
 function UserCard({ user }) {
@@ -77,28 +77,28 @@ export default function App() {
     window.location.reload();
   };
 
-  // const fetchUsersByBio = async (bio) => {
-  //   try {
-  //     const response = await axios.get(`https://searchcaster.xyz/api/profiles?q=${bio}`);
-  //     setUsers(response.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
-
-const fetchUsersByBio = async (bio) => {
+  const fetchUsersByBio = async (bio) => {
     try {
-      // Check if the bio input is an ENS name, resolve it to an address
-      if (bio.includes('.eth')) {
-        bio = await provider.resolveName(bio);
-      }
-      
       const response = await axios.get(`https://searchcaster.xyz/api/profiles?q=${bio}`);
       setUsers(response.data);
     } catch (error) {
       console.log(error);
     }
   }
+
+// const fetchUsersByBio = async (bio) => {
+//     try {
+//       // Check if the bio input is an ENS name, resolve it to an address
+//       if (bio.includes('.eth')) {
+//         bio = await provider.resolveName(bio);
+//       }
+      
+//       const response = await axios.get(`https://searchcaster.xyz/api/profiles?q=${bio}`);
+//       setUsers(response.data);
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   }
 	
 	
   const handleFormSubmit = (e) => {
