@@ -10,6 +10,8 @@ import './styles/App.css';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import axios from 'axios';
 import {ethers} from 'ethers';
+const apiKey = process.env.apiKey;
+
 const provider = new ethers.providers.AlchemyProvider("homestead", apiKey);
 
 
