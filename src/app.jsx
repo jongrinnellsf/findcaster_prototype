@@ -10,14 +10,13 @@ import './styles/App.css';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import axios from 'axios';
 import {ethers} from 'ethers';
-// const apiKey = process.env.apiKey;
 
-// const provider = new ethers.providers.AlchemyProvider("homestead", apiKey);
+const provider = new ethers.providers.AlchemyProvider("homestead", import.meta.env.VITE_MY_SECRET);
 
 
 function UserCard({ user }) {
   const shortAddress = user.connectedAddress 
-
+	
   return (
     <div className="users">
 			<img src={user.body.avatarUrl || 'https://www.farcaster.xyz/icon.png'} alt={user.body.username} />
@@ -29,7 +28,6 @@ function UserCard({ user }) {
 <img className="i" src='https://www.farcaster.xyz/icon.png' alt="Farcaster logo" />
 
         </a>
-
       {shortAddress && 
 					<a href={`https://etherscan.io/address/${user.connectedAddress}`} target="_blank" rel="noopener noreferrer">
 <img className="i" src='https://cdn-images-1.medium.com/v2/resize:fit:176/1*MxpMgwpR-_fXBou_ftL4qg@2x.png' alt="Etherscan logo" />
@@ -43,9 +41,11 @@ function UserCard({ user }) {
   );
 }
 
+
 export default function App() {
   const [value, setValue] = useState(0);
 	const [selectedInterest, setSelectedInterest] = useState(null);
+const [errorMessage, setErrorMessage] = useState(null);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -77,14 +77,14 @@ export default function App() {
     window.location.reload();
   };
 
-  const fetchUsersByBio = async (bio) => {
-    try {
-      const response = await axios.get(`https://searchcaster.xyz/api/profiles?q=${bio}`);
-      setUsers(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // const fetchUsersByBio = async (bio) => {
+  //   try {
+  //     const response = await axios.get(`https://searchcaster.xyz/api/profiles?q=${bio}`);
+  //     setUsers(response.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
 // const fetchUsersByBio = async (bio) => {
 //     try {
@@ -99,12 +99,59 @@ export default function App() {
 //       console.log(error);
 //     }
 //   }
+
+// const fetchUsersByBio = async (bio) => {
+//   try {
+//     // Check if the bio input is an ENS name, resolve it to an address
+//     if (bio.includes('.eth')) {
+//       bio = await provider.resolveName(bio);
+//     }
+
+//     // If the resolved address is null, don't make the request
+//     if (bio === null) {
+//       console.log("Invalid ENS name. No matching Ethereum address found.");
+//       setUsers([]);
+//       return;
+//     }
+    
+//     const response = await axios.get(`https://searchcaster.xyz/api/profiles?q=${bio}`);
+//     setUsers(response.data);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+	const fetchUsersByBio = async (bio) => {
+  try {
+    // Check if the bio input is an ENS name, resolve it to an address
+    if (bio.includes('.eth')) {
+      bio = await provider.resolveName(bio);
+    }
+
+    // If the resolved address is null, don't make the request
+    if (bio === null) {
+      setErrorMessage("No matching ENS found. It may exist, but it's not a connected address in Farcaster");
+      setUsers([]);
+      return;
+    }
+    
+    const response = await axios.get(`https://searchcaster.xyz/api/profiles?q=${bio}`);
+    setUsers(response.data);
+    setErrorMessage(null); // Reset the error message
+  } catch (error) {
+    console.log(error);
+    setErrorMessage("An error occurred while fetching data.");
+  }
+}
+
+	
 	
 	
   const handleFormSubmit = (e) => {
     e.preventDefault();  // Prevent the form from causing a page refresh
     fetchUsersByBio(inputAddress);
 		  setSearchQuery(inputAddress); // Set the search query
+  	setInputAddress('');
 
   };
 
@@ -128,7 +175,7 @@ export default function App() {
 								type="text" 
                 value={inputAddress} 
                 onChange={e => setInputAddress(e.target.value)} 
-                placeholder="search for any user field, emoji, or 0x ethereum address" 
+                placeholder="search for any user field, emoji, or ENS" 
               />
               <button className="app-connect-button" type="submit">Submit</button>
             </form>
@@ -157,10 +204,12 @@ export default function App() {
                 type="text" 
                 value={inputAddress} 
                 onChange={e => setInputAddress(e.target.value)} 
-                placeholder="search for any user field, emoji, or 0x ethereum address" 
+                placeholder="search for any user field, emoji, or ENS" 
               />
               <button className="app-connect-button" type="submit">Submit</button>
             </form>
+						{errorMessage && <div className="smaller">{errorMessage}</div>}
+
               <p className="smaller">Browse by term</p>
 						<div className="buttongroup">
               <button className="app-connect-button" onClick={() => fetchUsersByInterest("NFT")}>🖼️ nfts</button>

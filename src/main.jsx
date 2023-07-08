@@ -1,8 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './styles/index.css'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './styles/index.css';
 import { StyledEngineProvider } from '@mui/material/styles';
 import App from './app';
+
 
 ReactDOM.render(
   <React.StrictMode>
