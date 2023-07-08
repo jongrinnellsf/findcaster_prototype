@@ -35,7 +35,7 @@ function UserCard({ user }) {
         </a>
       }
 				<div className="fid ">fid: {user.body.id}</div>
-
+ 
 				</div>
     </div>
   );

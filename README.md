@@ -30,7 +30,8 @@ The UserCard component takes a user object as props and returns a user card disp
 
 - React.js
 - Axios
-- PropTypes
+- ethers.js
+- Alchemy
 
 Please note that the application fetches data from the Searchcaster API and as such, will need internet connectivity to function properly.
 
