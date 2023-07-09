@@ -4,9 +4,9 @@ FindCaster is a web application created with React.js. The application connects 
 
 ## Main Features
 
-1. **Profile Search**: Users can search for any user, user field, or emoji using the search box provided. On submission of the search query, the application fetches all the relevant user profiles that match the search query from the Searchcaster API.
+1. **Profile Search**: Users can search for any user, user field, emoji, or ENS using the search box provided. On submission of the search query, the application fetches all the relevant user profiles that match the search query from the Searchcaster API.
 
-2. **Browse by term**: Besides the manual search feature, the application also provides buttons to fetch users by predefined terms like "Music", "NFTs", and "Purple".
+2. **Browse by term**: Besides the manual search feature, the application also provides buttons to fetch users by predefined terms like "NFTs", "Founders", and "Purple".
 
 3. **Profile Display**: The search results are displayed as individual user cards, each containing the user's display name, bio, and links to their Warpcast and Etherscan profiles. 
 
