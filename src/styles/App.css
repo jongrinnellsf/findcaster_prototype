@@ -1,4 +1,5 @@
 
+
 .app {
   display: flex;
   justify-content: flex-start;
@@ -39,6 +40,8 @@ a {
     justify-content: space-between;
     width: 100%;
     margin: 1% 0%;
+
+
 	
 }
 
@@ -104,8 +107,9 @@ img {
 	align-items: center;
 }
 .logo-wrap .i {
-	max-width: 20px;
-	margin: 5px;
+	max-width: 25px;
+	margin: 8px;
+	
 }
 
 
@@ -275,7 +279,6 @@ form input[type="text"] {
     margin-right: 10px;  /* optional: adds some space between the input and the button */
     border-radius: 4px;
 }
-
 
 
 button:hover {
