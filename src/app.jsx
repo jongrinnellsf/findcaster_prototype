@@ -19,13 +19,13 @@ function UserCard({ user }) {
 
     return (
         <div className="users">
-            <img src={user.body.avatarUrl || 'https://www.farcaster.xyz/icon.png'} alt={user.body.username} />
+            <img src={user.body.avatarUrl || 'https://framerusercontent.com/images/t9D85wTGZz6NlDcwkdk7BlwEvuw.svg'} alt={user.body.username} />
             <h3 className="weight">{user.body.displayName}</h3>
-
+						
             <p>{user.body.bio}</p>
             <div className="logo-wrap">
                 <a href={`https://warpcast.com/${user.body.username}`} target="_blank" rel="noopener noreferrer">
-                    <img className="i" src='https://www.farcaster.xyz/icon.png' alt="Farcaster logo" />
+                    <img className="i" src='https://framerusercontent.com/images/t9D85wTGZz6NlDcwkdk7BlwEvuw.svg' alt="Warpcast logo" />
 
                 </a>
                 {shortAddress &&
