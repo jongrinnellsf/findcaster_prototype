@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
@@ -40,6 +40,29 @@ function UserCard({ user }) {
         </div>
     );
 }
+// function UserCard({ user }) {
+//     const shortAddress = user.connectedAddress
+
+//     return (
+//         <div className="users">
+//             <img src={user.body.avatarUrl || 'https://framerusercontent.com/images/t9D85wTGZz6NlDcwkdk7BlwEvuw.svg'} alt={user.body.username} />
+//             <h3 className="weight">{user.body.displayName}</h3>
+//             <p>{user.body.bio}</p>
+//             <div className="logo-wrap">
+//                 <a href={`https://warpcast.com/${user.body.username}`} target="_blank" rel="noopener noreferrer">
+//                     <img className="i" src='https://framerusercontent.com/images/t9D85wTGZz6NlDcwkdk7BlwEvuw.svg' alt="Warpcast logo" />
+//                 </a>
+//                 {shortAddress &&
+//                     <a href={`https://etherscan.io/address/${user.connectedAddress}`} target="_blank" rel="noopener noreferrer">
+//                         <img className="i" src='https://cdn-images-1.medium.com/v2/resize:fit:176/1*MxpMgwpR-_fXBou_ftL4qg@2x.png' alt="Etherscan logo" />
+//                     </a>
+//                 }
+//                 <div className="fid ">fid: {user.body.id}</div>
+//             </div>
+//         </div>
+//     );
+// }
+
 
 
 export default function App() {
@@ -104,6 +127,8 @@ export default function App() {
 
 
 
+
+
     const handleFormSubmit = (e) => {
         e.preventDefault();  // Prevent the form from causing a page refresh
         fetchUsersByBio(inputAddress);
@@ -116,8 +141,8 @@ export default function App() {
     return (
         <div>
             <div className="nav">
-                <p className="app-title" onClick={handleLogoClick}> 👀 Findcaster</p>
-                <a className="github" href="https://github.com/jongrinnellsf/findcaster_prototype" target="_blank" rel="noopener noreferrer">
+                <p className="app-title" onClick={handleLogoClick}> 👀 Browsecaster</p>
+                <a className="github" href="https://github.com/jongrinnellsf/Browsecaster_prototype" target="_blank" rel="noopener noreferrer">
                     <GitHubIcon />
 
                 </a>
@@ -155,7 +180,7 @@ export default function App() {
             ) : (
                 <div>
                     <div className="header">
-                        <h2 className="weight">Findcaster</h2>
+                        <h2 className="weight">Browsecaster</h2>
                         <form onSubmit={handleFormSubmit}>
                             <input
                                 type="text"

@@ -1,6 +1,6 @@
-# FindCaster
+# Browsecaster
 
-FindCaster is a web application created with React.js. The application connects to the Searchcaster API and provides a comprehensive way to look for user profiles in Farcaster based on their bio or interests. 
+Browsecaster is a web application created with React.js. The application connects to the Searchcaster API and provides a comprehensive way to look for user profiles in Farcaster based on their bio or interests. 
 
 ## Main Features
 

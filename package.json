@@ -7,10 +7,10 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.10.16",
-    "@mui/material": "^5.10.17",
+    "@mui/material": "^5.14.2",
     "@openst/mosaic-contracts": "^0.12.0",
     "@types/react": "^17.0.13",
     "@types/react-dom": "^17.0.8",
@@ -20,6 +20,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-material-stepper": "^1.0.0",
+    "react-modal": "^3.16.1",
     "react-router-dom": "^6.5.0",
     "react-tooltip": "^5.10.1",
     "vite": "^3.0.4"
